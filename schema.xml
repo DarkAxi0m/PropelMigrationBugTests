@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<database name="maindb">
+<database name="maindb" >
+ 
+  
   <table name="company" phpName="Company">
     <column name="id" type="Integer" required="true" autoIncrement="true" primaryKey="true"/>
     <column name="name" type="Varchar" size="255" primaryString="true"/>
@@ -10,6 +12,8 @@
     <unique name="IX_UQ_company_hash">
       <unique-column name="hash"/>
     </unique>
-	<behavior name="timestampable"/>
+	<behavior name="sluggable"/>
   </table>
+
+
 </database>
