@@ -1,0 +1,12 @@
+{
+	"name" : "chris/tests",
+	"authors" : [{
+			"name" : "Chris Chase",
+			"email" : "darkaxi0m@gmail.com"
+		}
+	],
+	"require" : {
+		"php" : ">=5.5.0",
+		"propel/propel" : "~2.0@dev"
+	}
+}

@@ -1,0 +1,11 @@
+# local user install settings for propel
+propel:
+    database:
+        connections:
+            maindb:
+                adapter: mysql
+                dsn: mysql:host=127.0.0.1;port=3306;dbname=test4
+                user: root
+                password:
+                settings:
+                    charset: utf8
