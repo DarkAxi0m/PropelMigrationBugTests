@@ -10,7 +10,7 @@ mysql -u root -e "create database test4"
 echo done
 echo
 echo ==============================
-echo run prople commands:
+echo run propel commands:
 echo 
 echo --diff 1---------------------------
 vendor/bin/propel diff
