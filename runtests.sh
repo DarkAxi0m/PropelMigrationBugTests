@@ -1,6 +1,7 @@
-echo Removing Old Migrations:
+echo Removing Old Files:
 echo
 rm -R generated-migrations
+rm dump.sql
 echo done
 echo ==============================
 echo
@@ -38,3 +39,4 @@ vendor/bin/propel migrate
 echo
 echo done
 echo ==============================
+mysqldump -u root test4 > dump.sql
