@@ -2,10 +2,10 @@
 
 /**
  * Data object containing the SQL and PHP code to migrate the database
- * up to version 1462928158.
- * Generated on 2016-05-11 02:55:58 
+ * up to version 1462928480.
+ * Generated on 2016-05-11 03:01:20 
  */
-class PropelMigration_1462928158
+class PropelMigration_1462928480
 {
     public $comment = '';
 

@@ -2,10 +2,10 @@
 
 /**
  * Data object containing the SQL and PHP code to migrate the database
- * up to version 1462928157.
- * Generated on 2016-05-11 02:55:57 
+ * up to version 1462928478.
+ * Generated on 2016-05-11 03:01:18 
  */
-class PropelMigration_1462928157
+class PropelMigration_1462928478
 {
     public $comment = '';
 
@@ -43,9 +43,17 @@ class PropelMigration_1462928157
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-DROP INDEX `company_slug` ON `company`;
-
-CREATE UNIQUE INDEX `company_slug` ON `company` (`slug`(255));
+CREATE TABLE `company`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255),
+    `hash` VARCHAR(255),
+    `slug` VARCHAR(255),
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `IX_UQ_company_id` (`id`),
+    UNIQUE INDEX `IX_UQ_company_hash` (`hash`),
+    UNIQUE INDEX `company_slug` (`slug`(255))
+) ENGINE=InnoDB;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
@@ -67,9 +75,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-DROP INDEX `company_slug` ON `company`;
-
-CREATE UNIQUE INDEX `company_slug` ON `company` (`slug`);
+DROP TABLE IF EXISTS `company`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
